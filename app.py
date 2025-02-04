@@ -15,7 +15,7 @@ def create_customer():
     try:
         data = request.json
         name = data.get("name")
-        return jsonify({"msg": f"Customer inserted {name} {role} {description}"}), 201
+        return jsonify({"msg": f"Customer inserted {name}"}), 201
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
