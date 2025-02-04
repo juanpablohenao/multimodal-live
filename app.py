@@ -9,5 +9,16 @@ def home():
     result = [{"name": "juan pablo", "role": "web developer", "description": "super good"},{"name": "maria del pilar", "role": "dibujante arquitectonica", "description": "super good"}]
     return jsonify(result)
 
+# create a customer
+@app.route("/",methods=["POST"])
+def create_customer():
+    try:
+        data = request.json
+        name = data.get("name")
+        return jsonify({"msg": f"Customer inserted {name} {role} {description}"}), 201
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == "__main__":
     app.run()
