@@ -4,12 +4,16 @@ from flask_cors import CORS
 from google import genai
 from google.genai import types
 # from IPython.display import Markdown
+import os
+from dotenv import load_dotenv
 
-print("Hello world")
+print("Hello world2")
 app = Flask(__name__)
 CORS(app)
 # GOOGLE_API_KEY=userdata.get('GOOGLE_API_KEY')
 GOOGLE_API_KEY="AIzaSyAMveklntNsU81Msld_yXfKt0jl8gTJ6zY"
+load_dotenv()
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 client = genai.Client(api_key=GOOGLE_API_KEY)
 MODEL_ID = "gemini-2.0-flash-exp" # @param ["gemini-1.5-flash-8b","gemini-1.5-flash-002","gemini-1.5-pro-002","gemini-2.0-flash-exp"] {"allow-input":true}
 
