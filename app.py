@@ -7,14 +7,14 @@ from google.genai import types
 import os
 from dotenv import load_dotenv
 
-# load_dotenv()
+load_dotenv()
 
-print("Hello world3")
+print("Hello world4")
 app = Flask(__name__)
 CORS(app) 
 # GOOGLE_API_KEY=userdata.get('GOOGLE_API_KEY')
-GOOGLE_API_KEY="AIzaSyAMveklntNsU81Msld_yXfKt0jl8gTJ6zY"
-# GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+# GOOGLE_API_KEY="31416"
+GOOGLE_API_KEY = os.getenv("GEMINI_API_KEY")
 print(GOOGLE_API_KEY)
 client = genai.Client(api_key=GOOGLE_API_KEY)
 MODEL_ID = "gemini-2.0-flash-exp" # @param ["gemini-1.5-flash-8b","gemini-1.5-flash-002","gemini-1.5-pro-002","gemini-2.0-flash-exp"] {"allow-input":true}
